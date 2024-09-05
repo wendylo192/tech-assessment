@@ -21,6 +21,7 @@ Este puerto es implementado por un adaptador (`PriceRepositoryAdapter`) que mane
 
 En el núcleo de la arquitectura, se encuentra el módulo `prices-domain`, donde se define el modelo de dominio (`Price`) que encapsula la lógica de negocio pura, sin ninguna dependencia externa.
 
+![disenoPrices](https://github.com/user-attachments/assets/d7ff060f-ef19-47dd-bb07-771295840ac0)
 
 ## Instalación
 
