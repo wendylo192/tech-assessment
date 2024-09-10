@@ -52,11 +52,13 @@ Este endpoint permite obtener el precio aplicable para un producto y marca en un
 
 **Ejemplo de Solicitud:**
 
+Caso base  
+
 ```bash
 curl -X POST http://localhost:8080/prices/v1/api/price -H "Content-Type: application/json" -d '{
-    "productId": 12345,
+    "productId": 35455,
     "brandId": 1,
-    "applicationDate": "2024-08-25T14:00:00"
+    "applicationDate": "2020-06-14T10:00:00"
 }'
 ```
 **productId:** ID del producto.
@@ -67,12 +69,35 @@ curl -X POST http://localhost:8080/prices/v1/api/price -H "Content-Type: applica
 
 ```json
 {
-    "productId": 12345,
+    "productId": 35455,
     "brandId": 1,
     "priceList": 1,
-    "startDate": "2024-08-25T00:00:00",
-    "endDate": "2024-12-31T23:59:59",
+    "startDate": "2020-06-14T00:00:00",
+    "endDate": "2020-12-31T23:59:59",
     "price": 35.50
+}
+```  
+Caso con error controlado  
+
+```bash
+curl -X POST http://localhost:8080/prices/v1/api/price -H "Content-Type: application/json" -d '{
+    "productId": 12345,
+    "brandId": 1,
+    "applicationDate": "2024-09-10T10:00:00"
+}'
+```
+**productId:** ID del producto.
+**brandId:** ID de la marca.
+**applicationDate:** Fecha de aplicación del precio.
+
+**Ejemplo de Respuesta:**
+
+```json
+{
+    "code": "ERR_PRICES_001",
+    "message": "Price not found.",
+    "details": null,
+    "timestamp": "2024-09-10T16:56:13.827177"
 }
 ```
 ## Dockerización
