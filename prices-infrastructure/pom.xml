@@ -6,7 +6,6 @@
 		<groupId>com.inditex</groupId>
 		<artifactId>prices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/>
 	</parent>
 	<artifactId>prices-infrastructure</artifactId>
 
